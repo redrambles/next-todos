@@ -1,9 +1,17 @@
 import Link from "next/link";
 import { prisma } from "@/db";
+import TodoItem from "@/components/TodoItems";
 import React from "react";
 
+const getTodos = () => {
+  return prisma.todo.findMany();
+};
+
 async function Home() {
-  const todos = await prisma.todo.findMany();
+  const todos = await getTodos();
+  // Add a todo manually for now
+  // await prisma.todo.create({ data: { title: "Learn Next.js", complete: false } });
+  console.log(await getTodos());
   return (
     <>
       <header className='flex justify-between items-center mb-4'>
@@ -24,8 +32,8 @@ async function Home() {
         </nav>
       </header>
       <ul className='pl-4'>
-        {todos.map((todo) => (
-          <li key={todo.id}>{todo.title}</li>
+        {todos?.map((todo) => (
+          <TodoItem key={todo.id} todo={todo} />
         ))}
       </ul>
     </>
