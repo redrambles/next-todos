@@ -1,12 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import getTodos from "./functions/getTodos";
-import toggleTodo from "./functions/toggleTodo";
-import deleteTodo from "./functions/deleteTodo";
-import TodoItem from "@/components/TodoItems";
 import React from "react";
+import { useState, useEffect } from "react";
+import TodoItem from "@/components/TodoItems";
+import { toggleTodo, deleteTodo, getTodos } from "./functions";
+import Link from "next/link";
 
 type TodoType = {
   id: string;
@@ -38,9 +36,6 @@ function Home() {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
-  // Add a todo manually for now
-  // await prisma.todo.create({ data: { title: "Learn Next.js", complete: false } });
-  // console.log(await getTodos());
   return (
     <>
       <header className='flex justify-between items-center mb-4'>
