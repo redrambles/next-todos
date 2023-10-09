@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useState, useEffect } from "react";
-import TodoItem from "@/components/TodoItems";
+import TodoItem from "@/components/TodoItem";
 import { toggleTodo, deleteTodo, getTodos } from "./functions";
 import Link from "next/link";
 

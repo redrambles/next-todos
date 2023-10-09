@@ -3,7 +3,7 @@ import { prisma } from "@/db";
 import { redirect } from "next/navigation";
 import React from "react";
 
-// server action
+// server action - we can use this here because there is no 'onChange' or 'useEffect' type things happening on this page
 const createTodo = async (data: FormData) => {
   "use server"; // this will indicate that the function has to run only on the server
   const title = data.get("title")?.valueOf();
@@ -41,7 +41,7 @@ function New() {
       </form>
       <Link
         href='/'
-        className='border border-orange-300 text-orange-300 px-2 py-1 rounded hover:bg-orange-700 hover:text-orange-100 focus-within:bg-orange-700 outline-none'
+        className='border border-orange-300 text-orange-300 px-2 py-2 rounded hover:bg-orange-700 hover:text-orange-100 focus-within:bg-orange-700 outline-none'
       >
         {" "}
         Back to Todos

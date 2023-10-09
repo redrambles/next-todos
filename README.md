@@ -1,5 +1,18 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) and uses [`Prisma`] (https://www.prisma.io) to persist data using a SQLite database.
 
+```
+npx prisma init --datasource-provider sqlite
+npx prisma migrate dev --name init
+```
+
+```
+const nextConfig = {
+  experimental: {
+    serverActions: true
+  }
+};
+```
+
 ## Getting Started
 
 First, run the development server:

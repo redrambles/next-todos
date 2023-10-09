@@ -29,7 +29,7 @@ function AboutMe() {
         href='/'
         className='inline-block py-2 my-4 border border-orange-300 text-orange-300 px-2 rounded hover:bg-orange-700 hover:text-orange-200 focus-within:bg-orange-700 outline-none'
       >
-        Back to Home Page
+        Back to Todos
       </Link>
     </div>
   );
